@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+	<h2>Loans</h2><br/>
+<a href="/loan/new">Add</a>
+<table class="table">
+<thead>
+
+  <tr>
+  	<td>Name</td>
+  	<td>Date</td>
+  	<td>Original Amount</td>
+  	<td>Rate</td>
+  	<td>Total Amount</td>
+  	<td>Status</td>
+  </tr>
+  </thead>
+       
+   <tbody>
+  <tr th:each="loan : ${loans}">
+  	<td th:text="${loan.name}"></td>
+  	<td th:text="${loan.loan_date}"></td>
+  	<td th:text="${loan.original_amount}"></td>
+  	<td th:text="${loan.rate}"></td>
+  	<td th:text="${loan.total_amount}"></td>
+  	<td th:text="${loan.status}"></td>
+  </tr>
+</tbody>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#" th:action="@{/loan/new}" th:object="${loan}" method="post">
+	<table>
+	<tr>
+			<td>Name:</td>
+			<td><input type="text" th:field="*{name}"/></td>
+			<td th:if="${#fields.hasErrors('name')}"
+			    th:errors="*{name}">Name Error</td>
+		</tr>
+		
+		<tr>
+			<td>Date:</td>
+			<td><input type="text" th:field="*{loan_date}"/></td>
+			<td th:if="${#fields.hasErrors('loan_date')}"
+			    th:errors="*{loan_date}">Date Error</td>
+		</tr>
+
+		<tr>
+			<td>Amount:</td>
+			<td><input type="text" th:field="*{original_amount}"/></td>
+			<td th:if="${#fields.hasErrors('original_amount')}"
+			    th:errors="*{original_amount}">Amount Error</td>
+		</tr>
+
+		<tr>
+			<td>Rate:</td>
+			<td> <input type="radio" name="rate" th:field="*{rate}" value="0.15">15%</td>
+			<td><input type="radio" name="rate" th:field="*{rate}" value="0.20">20%</td>
+		</tr>
+		
+		<tr>
+			<td></td>
+			<td> <input type="submit" value="Apply"></td>
+			<td><input type="reset" value="cancelar"></td>
+		</tr>
+		</table>
+		
+		<a href = "/loan/list">View all Loans</a>
+	</form>	
+	
+	
+</body>
+</html>
